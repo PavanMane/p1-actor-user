@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<Actor>
+	<Request name="createOffice">
+		<Validators>
+			<!--<Validator bean="mandatoryFieldValidator">
+				<IParam fieldName="operationMode" errorCode="200020"/>
+				<IParam fieldName="partnerId" errorCode="200218"/>
+				<IParam fieldName="assistorHandleType" errorCode="200204"/>
+				<IParam fieldName="assistorHandleValue" errorCode="200205"/>
+				<IParam fieldName="functioncode" errorCode="200004"/>
+				<IParam fieldName="functionsubcode" errorCode="200005"/>
+			</Validator>
+			<Validator bean="patternFieldValidator">
+				<IParam fieldName="partnerId" errorCode="210205" pattern="RBL|rbl|IDFC|NOVOPAY|AXIS|axis|AIG|WALLET|wallet"/>
+				<IParam fieldName="operationMode" errorCode="210020" pattern="ASSISTED|SELF|SYSTEM"/>
+				<IParam fieldName="functioncode" errorCode="210005" pattern="MONEY-TRANSFER|INSURANCE|MERCHANT-PAYMENT"/>
+				<IParam fieldName="functionsubcode" errorCode="210006" pattern="BY-ACTOR|BY-REFERENCE"/>
+				<IParam fieldName="referenceNoType" errorCode="210024" pattern="NOVOPAY|PARTNER|ALL|CLIENT"/>
+				<IParam fieldName="actorHandleType" errorCode="210008" pattern="MSISDN"/>
+				<IParam fieldName="actorHandleValue" errorCode="210009" pattern="^[1-9][0-9]{9}$"/>
+				<IParam fieldName="assistorHandleType" errorCode="210015" pattern="MSISDN"/>
+				<IParam fieldName="assistorHandleValue" errorCode="210016" pattern="^[1-9][0-9]{9}$"/>
+			</Validator> -->
+		</Validators>
+		<Processors>
+			<Processor bean="dummyProcessor">
+			    <IParam fieldName="message" value="Office created successfully" />			
+			</Processor>	
+		</Processors>
+	</Request>
+</Actor>

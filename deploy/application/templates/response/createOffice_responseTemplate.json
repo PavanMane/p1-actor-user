@@ -1,0 +1,22 @@
+{
+	"createOffice": {
+		"responseStatus": {
+			"class": "CMPLX",
+			"type": "MAP",
+			"responseStatus":{
+				"status":{
+					"class": "SMPL",
+					"type": "String"
+				},
+				"code":{
+					"class": "SMPL",
+					"type": "String"
+				},
+				"message":{
+					"class": "SMPL",
+					"type": "String"
+				}
+			}
+		}	
+	}
+}

@@ -1,0 +1,49 @@
+buildscript {
+    repositories {
+        maven {
+    		url "http://192.168.150.22:8081/repository/maven-public/"
+   		}
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.3.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+ext.microserviceBaseName = 'actor'
+ext.globalVersion = '1.0.0'
+ext.deployDir = 'deploy/application/dist'
+ext.buildType = 'SNAPSHOT'
+//
+jar {
+    baseName = project.property('microserviceBaseName')
+    version =  project.property('globalVersion') + '.' + project.property('buildType')
+    destinationDir = file(project.property('deployDir'))
+}
+
+repositories {
+    maven {
+    	url "http://192.168.150.22:8081/repository/maven-public/"
+   	}
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+ext['hibernate.version'] = '5.2.8.Final'
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web") 
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+	compile group: 'org.springframework', name: 'spring-aspects', version: '4.3.6.RELEASE'
+    compile("org.flywaydb:flyway-core:4.1.1") 
+	compile("in.novopay:infra-navigation:0.0.1.RELEASE")
+	compile("in.novopay:infra-service-gateway:0.0.1.RELEASE")
+	
+    
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+}

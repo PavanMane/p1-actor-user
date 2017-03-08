@@ -1,0 +1,8 @@
+{
+	"createOffice": {
+		"name": {
+			"class": "SMPL",
+			"type": "String"
+		}
+	}
+}
